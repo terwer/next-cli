@@ -1,19 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppView from './AppView.vue';
 
 export default {
-  name: 'app',
   components: {
-    HelloWorld
-  }
-}
+    AppView,
+  },
+  head: {
+    titleTemplate(title) {
+      if (title) return `${title} | VueNeue`;
+      return 'VueNeue';
+    },
+    htmlAttrs: {
+      lang: 'en',
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    ],
+  },
+};
 </script>
 
 <style>
@@ -23,6 +34,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

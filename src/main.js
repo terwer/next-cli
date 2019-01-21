@@ -3,6 +3,10 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+export default ({ router, store }) => {
+  return new Vue({
+    store,
+    router,
+    render: h => h(App)
+  });
+}
