@@ -25,5 +25,23 @@ npm run test
 npm run lint
 ```
 
+### Ssr support
+```
+npm run ssr:build
+```
+
+```
+npm run ssr:serve
+```
+
+```
+npm run ssr:start
+```
+
+
+```
+npm run generate
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

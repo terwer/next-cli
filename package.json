@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "rm -rf dist && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "generate": "vue-cli-service generate",
-    "ssr:build": "vue-cli-service ssr:build",
+    "generate": "rm -rf dist && vue-cli-service generate",
+    "ssr:build": "rm -rf dist && vue-cli-service ssr:build",
     "ssr:serve": "vue-cli-service ssr:serve",
     "ssr:start": "vue-cli-service ssr:start"
   },
@@ -29,6 +29,7 @@
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-service": "^3.3.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
     "@vueneue/vue-cli-plugin-ssr": "^0.3.23",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
@@ -42,7 +43,8 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/prettier"
     ],
     "rules": {},
     "parserOptions": {
