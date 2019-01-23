@@ -1,5 +1,13 @@
 # next-cli
 
+# Note
+
+```
+This project has Paused,Waiting for offical support 
+Exception:
+TypeError: NativeModule.wrap is not a function
+```
+
 ## Project setup
 ```
 npm install
@@ -43,5 +51,5 @@ npm run ssr:start
 npm run generate
 ```
 
-### Customize configuration
+### Customize configuration 
 See [Configuration Reference](https://cli.vuejs.org/config/).
