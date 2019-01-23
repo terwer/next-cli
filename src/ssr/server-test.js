@@ -1,12 +1,15 @@
 // =================
 // Usage
 // =================
-require('./server.js')
+require("./server.js");
 
-var promise = global.renderServer()
+const promise = global.renderServer();
 
-promise.then(value => {
+promise.then(
+  value => {
     console.log(value); // Success!
-}, reason => {
+  },
+  reason => {
     console.log(reason); // Error!
-});
+  }
+);

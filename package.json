@@ -10,13 +10,15 @@
     "ssr:build": "rm -rf dist && vue-cli-service ssr:build",
     "ssr:serve": "vue-cli-service ssr:serve",
     "ssr:start": "vue-cli-service ssr:start",
-    "ssr:server-run": "node ssr/server.js",
-    "ssr:server-test": "node ssr/server-test.js",
-    "ssr:server-bundle": "cd ssr && webpack --mode development",
+    "ssr:server-run": "node src/ssr/server.js",
+    "ssr:server-test": "node src/ssr/server-test.js",
+    "ssr:server-bundle": "cd src/ssr && webpack --mode development",
+    "ssr:server-bundle:prd": "cd src/ssr && webpack --mode production",
     "ssr:server-bundle-run": "node dist/js/server-bundle.js",
-    "ssr:server-bundle-test": "node ssr/server-bundle-test.js"
+    "ssr:server-bundle-test": "node src/ssr/server-bundle-test.js"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "@vueneue/ssr-core": "^0.3.0",
     "@vueneue/ssr-server": "^0.3.0",
     "core-js": "^2.5.7",
@@ -32,6 +34,7 @@
     "vuex-class": "^0.3.1"
   },
   "devDependencies": {
+    "@babel/helper-plugin-utils": "^7.0.0",
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-service": "^3.3.0",
@@ -54,7 +57,20 @@
       "eslint:recommended",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": [
+        2,
+        {
+          "vars": "local",
+          "args": "none"
+        }
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
